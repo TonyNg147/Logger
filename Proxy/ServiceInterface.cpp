@@ -10,3 +10,8 @@ ControllerInterface::ControllerInterface(const QString& service,
 ControllerInterface::~ControllerInterface(){
 
 }
+
+ControllerInterface& ControllerInterface::getInstance(){
+    static ControllerInterface instance("controller.service","/controller",QDBusConnection::sessionBus());
+    return instance;
+}

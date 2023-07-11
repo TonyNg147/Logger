@@ -12,11 +12,13 @@ class ControllerInterface: public QDBusAbstractInterface
 {
     Q_OBJECT
     Q_PROPERTY(bool status READ status)
-    public:
+    private:    
         ControllerInterface(const QString& service, 
-                            const QString& object,
-                            const QDBusConnection& connection,
-                            QObject* parent = nullptr);
+                    const QString& object,
+                    const QDBusConnection& connection,
+                    QObject* parent = nullptr);
+    public:
+        static ControllerInterface& getInstance();
         ~ControllerInterface();
         inline bool status() const {
             return qvariant_cast<bool>(property("status"));

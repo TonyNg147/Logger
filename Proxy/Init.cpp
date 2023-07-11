@@ -67,6 +67,7 @@ static void messageHandler(QtMsgType type, const QMessageLogContext &, const QSt
     }
 }
 namespace DBusNavtive{
+    // Initialize the logging method and the meta data type
     void initialize(){
         printf("Install success\n");
         qDBusRegisterMetaType<DataTransfer>();
